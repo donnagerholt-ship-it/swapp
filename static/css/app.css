@@ -737,3 +737,80 @@
     background: #F4BFC8;
 }
 
+
+
+/* PHONE PREVIEW FULL-CONTENT FIX
+   Prevents the Reminder card from being clipped when the browser/window size changes. */
+.phone-screen {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+}
+
+.phone-mockup {
+    width: clamp(260px, 20vw, 320px);
+}
+
+.phone-header {
+    margin-bottom: clamp(12px, 1.2vw, 18px);
+}
+
+.phone-card {
+    padding: clamp(12px, 1vw, 16px);
+    margin-bottom: clamp(10px, 0.9vw, 14px);
+}
+
+.phone-card:last-child {
+    margin-bottom: 0;
+}
+
+.phone-card h2 {
+    font-size: clamp(1.1rem, 1.25vw, 1.45rem);
+    margin-bottom: 6px;
+}
+
+.phone-card p,
+.phone-card li {
+    font-size: clamp(0.72rem, 0.82vw, 0.86rem);
+}
+
+.points-preview {
+    font-size: clamp(1.9rem, 2.4vw, 2.6rem) !important;
+}
+
+@media (max-height: 760px) and (min-width: 901px) {
+    .phone-mockup {
+        width: clamp(245px, 18vw, 300px);
+        padding: 12px;
+    }
+
+    .phone-screen {
+        padding: 16px;
+    }
+
+    .phone-card {
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 16px;
+    }
+
+    .phone-card h2 {
+        font-size: 1.08rem;
+    }
+
+    .phone-card p,
+    .phone-card li {
+        font-size: 0.72rem;
+    }
+
+    .points-preview {
+        font-size: 1.9rem !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .phone-mockup {
+        width: 100%;
+        max-width: 320px;
+    }
+}
