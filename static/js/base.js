@@ -14,7 +14,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+  // ─── NEWSLETTER FORM ───
+  document.querySelectorAll('.newsletter-form button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.previousElementSibling;
+      if (input && input.value.includes('@')) {
+        btn.textContent = '✓ Subscribed!';
+        btn.style.background = 'var(--teal)';
+        input.value = '';
+        setTimeout(() => { btn.textContent = 'Sign Up'; btn.style.background = ''; }, 3000);
+      } else if (input) {
+        input.style.borderColor = '#c0392b';
+        setTimeout(() => { input.style.borderColor = ''; }, 2000);
+      }
+    });
+  });
 
 // scroll effect
 AOS.init();
